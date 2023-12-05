@@ -1,7 +1,6 @@
 fun main() {
-    fun String.findNumbers() = Regex("\\d+").findAll(this)
     fun Char.isSymbol() = !isLetterOrDigit() && !equals('.')
-    fun List<String>.getOrNull(row: Int, col: Int): Char? = getOrNull(row)?.getOrNull(col)
+
     fun getSurroundingCoordinates(row: Int, colRange: IntRange): List<Pair<Int, Int>> =
         colRange.flatMap { col ->
             (row - 1..row + 1)

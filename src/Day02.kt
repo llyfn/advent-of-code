@@ -1,9 +1,10 @@
 fun main() {
+    fun List<String>.findIntBefore(s: String) = find { it.endsWith(s) }?.substringBefore(s)?.toInt() ?: 0
+
     fun String.parse(): Pair<Int, List<List<Int>>> {
         val id = substringBefore(":").substringAfter(" ").toInt()
         val subsets = substringAfter(": ").split("; ")
         return id to subsets.map { subset ->
-            fun List<String>.findIntBefore(s: String) = find { it.endsWith(s) }?.substringBefore(s)?.toInt() ?: 0
             subset.split(", ").run { listOf(findIntBefore(" red"), findIntBefore(" green"), findIntBefore(" blue")) }
         }
     }
