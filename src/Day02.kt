@@ -13,7 +13,7 @@ fun main() {
         .filter { (_, subsets) -> subsets.all { it[0] <= 12 && it[1] <= 13 && it[2] <= 14 } }.sumOf { it.first }
 
     fun part2(input: List<String>): Int = input.map { it.parse() }
-        .sumOf { (_, subsets) -> subsets.run { maxOf { it[0] } * maxOf { it[1] } * maxOf { it[2] } } }
+        .sumOf { (_, subsets) -> subsets.run { productOf { it.max() } } }
 
     check(part1(readInput("Day02_test")) == 8)
     check(part2(readInput("Day02_test")) == 2286)

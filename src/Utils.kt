@@ -39,3 +39,23 @@ fun String.getLongs() = findNumbers().map { it.value.toLong() }.toList()
  * The shorthand for getting a character at the given position in the list of strings.
  */
 fun List<CharSequence>.getOrNull(row: Int, col: Int): Char? = getOrNull(row)?.getOrNull(col)
+
+/**
+ * Returns the product of all elements in the collection.
+ */
+fun Iterable<Int>.product(): Int {
+    var sum = 1
+    for (element in this) { sum *= element }
+    return sum
+}
+
+/**
+ * Returns the product of all values produced by selector function applied to each element in the collection.
+ */
+inline fun <T> Iterable<T>.productOf(selector: (T) -> Int): Int {
+    var product = 1
+    for (element in this) {
+        product *= selector(element)
+    }
+    return product
+}
