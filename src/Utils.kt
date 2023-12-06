@@ -43,19 +43,9 @@ fun List<CharSequence>.getOrNull(row: Int, col: Int): Char? = getOrNull(row)?.ge
 /**
  * Returns the product of all elements in the collection.
  */
-fun Iterable<Int>.product(): Int {
-    var sum = 1
-    for (element in this) { sum *= element }
-    return sum
-}
+fun Iterable<Int>.product(): Int = fold(1) { acc, it -> acc * it }
 
 /**
  * Returns the product of all values produced by selector function applied to each element in the collection.
  */
-inline fun <T> Iterable<T>.productOf(selector: (T) -> Int): Int {
-    var product = 1
-    for (element in this) {
-        product *= selector(element)
-    }
-    return product
-}
+inline fun <T> Iterable<T>.productOf(selector: (T) -> Int): Int = fold(1) { acc, it -> acc * selector(it) }
