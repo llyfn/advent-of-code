@@ -23,7 +23,7 @@ fun Any?.println() = println(this)
 /**
  * Finds all numbers in the string.
  */
-fun String.findNumbers() = Regex("\\d+").findAll(this)
+fun String.findNumbers() = Regex("-?\\d+").findAll(this)
 
 /**
  * Converts string to integer list.
