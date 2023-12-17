@@ -38,10 +38,5 @@ fun main() {
         return 2
     }
 
-    check(part1(readInput("Day10_1_test")) == 4)
-    check(part2(readInput("Day10_2_test")) == 2)
-
-    val input = readInput("Day10")
-    part1(input).println()
-    part2(input).println()
+    solve(10, ::part1, ::part2, 4, 2)
 }

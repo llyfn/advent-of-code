@@ -32,10 +32,5 @@ fun main() {
         return adjNumsByGears.filterValues { it.size == 2 }.map { it.value[0] * it.value[1] }.sum()
     }
 
-    check(part1(readInput("Day03_test")) == 4361)
-    check(part2(readInput("Day03_test")) == 467835)
-
-    val input = readInput("Day03")
-    part1(input).println()
-    part2(input).println()
+    solve(3, ::part1, ::part2, 4361, 467835)
 }

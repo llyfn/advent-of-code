@@ -49,3 +49,18 @@ fun Iterable<Int>.product(): Int = fold(1) { acc, it -> acc * it }
  * Returns the product of all values produced by selector function applied to each element in the collection.
  */
 inline fun <T> Iterable<T>.productOf(selector: (T) -> Int): Int = fold(1) { acc, it -> acc * selector(it) }
+
+/**
+ * Runs solution on the input for the given day.
+ */
+inline fun <T, S> solve(day: Int, pt1: (List<String>) -> T, pt2: (List<String>) -> S, t1Ans: T, t2Ans: S? = null) {
+    val paddedDay = day.toString().padStart(2, '0')
+    val input = readInput("Day$paddedDay")
+    val testInput = runCatching { readInput("Day${paddedDay}_test") }.getOrNull()
+
+    check(pt1(testInput ?: readInput("Day${paddedDay}_1_test")) == t1Ans)
+    t2Ans?.let { check(pt2(testInput ?: readInput("Day${paddedDay}_2_test")) == it) }
+
+    pt1(input).println()
+    pt2(input).println()
+}

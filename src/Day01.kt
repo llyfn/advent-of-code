@@ -13,10 +13,5 @@ fun main() {
         }
     }
 
-    check(part1(readInput("Day01_1_test")) == 142)
-    check(part2(readInput("Day01_2_test")) == 281)
-
-    val input = readInput("Day01")
-    part1(input).println()
-    part2(input).println()
+    solve(1, ::part1, ::part2, 142, 281)
 }

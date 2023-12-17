@@ -44,11 +44,6 @@ fun main() {
         }.minOf { it.min() }
     }
 
-    check(part1(readInput("Day05_test")) == 35L)
-    check(part2(readInput("Day05_test")) == 46L)
-
-    val input = readInput("Day05")
-    part1(input).println()
-    part2(input).println()
+    solve(5, ::part1, ::part2, 35L, 46L)
 }
 

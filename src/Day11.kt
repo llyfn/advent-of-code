@@ -23,9 +23,5 @@ fun main() {
     fun part1(input: List<String>): Long = input.getSumOfPaths(2)
     fun part2(input: List<String>): Long = input.getSumOfPaths(1000000)
 
-    check(part1(readInput("Day11_test")) == 374L)
-
-    val input = readInput("Day11")
-    part1(input).println()
-    part2(input).println()
+    solve(11, ::part1, ::part2, 374L)
 }

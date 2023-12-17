@@ -25,10 +25,5 @@ fun main() {
         return copiesByCardId.sum()
     }
 
-    check(part1(readInput("Day04_test")) == 13)
-    check(part2(readInput("Day04_test")) == 30)
-
-    val input = readInput("Day04")
-    part1(input).println()
-    part2(input).println()
+    solve(4, ::part1, ::part2, 13, 30)
 }

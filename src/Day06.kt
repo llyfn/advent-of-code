@@ -25,10 +25,5 @@ fun main() {
         return ceil(max - 1).toLong() - floor(min + 1).toLong() + 1
     }
 
-    check(part1(readInput("Day06_test")) == 288)
-    check(part2(readInput("Day06_test")) == 71503L)
-
-    val input = readInput("Day06")
-    part1(input).println()
-    part2(input).println()
+    solve(6, ::part1, ::part2, 288, 71503L)
 }

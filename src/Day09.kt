@@ -21,10 +21,5 @@ fun main() {
         curr
     }
 
-    check(part1(readInput("Day09_test")) == 114L)
-    check(part2(readInput("Day09_test")) == 2L)
-
-    val input = readInput("Day09")
-    part1(input).println()
-    part2(input).println()
+    solve(9, ::part1, ::part2, 114L, 2L)
 }

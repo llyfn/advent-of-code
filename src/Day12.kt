@@ -28,10 +28,5 @@ fun main() {
         getArrangements(List(5) { springs }.joinToString("?"), List(5) { groups.getInts() }.flatten())
     }
 
-    check(part1(readInput("Day12_test")) == 21L)
-    check(part2(readInput("Day12_test")) == 525152L)
-
-    val input = readInput("Day12")
-    part1(input).println()
-    part2(input).println()
+    solve(12, ::part1, ::part2, 21L, 525152L)
 }

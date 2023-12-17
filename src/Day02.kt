@@ -15,10 +15,5 @@ fun main() {
     fun part2(input: List<String>): Int = input.map { it.parse() }
         .sumOf { (_, subsets) -> subsets.run { maxOf { it[0] } * maxOf { it[1] } * maxOf { it[2] } } }
 
-    check(part1(readInput("Day02_test")) == 8)
-    check(part2(readInput("Day02_test")) == 2286)
-
-    val input = readInput("Day02")
-    part1(input).println()
-    part2(input).println()
+    solve(2, ::part1, ::part2, 8, 2286)
 }
