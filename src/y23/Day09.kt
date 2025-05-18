@@ -1,3 +1,8 @@
+package y23
+
+import getLongs
+import solve
+
 fun main() {
     fun List<Long>.getDiff() = zipWithNext().map { (a, b) -> b - a }
 
@@ -21,5 +26,5 @@ fun main() {
         curr
     }
 
-    solve(9, ::part1, ::part2, 114L, 2L)
+    solve(23, 9, ::part1, ::part2, 114L, 2L)
 }

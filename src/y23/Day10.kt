@@ -1,3 +1,8 @@
+package y23
+
+import getOrNull
+import solve
+
 fun main() {
     val connectionsByPipes = mapOf(
         'S' to listOf(1 to 0, 0 to 1, 0 to -1, -1 to 0),
@@ -38,5 +43,5 @@ fun main() {
         return 2
     }
 
-    solve(10, ::part1, ::part2, 4, 2)
+    solve(23, 10, ::part1, ::part2, 4, 2)
 }

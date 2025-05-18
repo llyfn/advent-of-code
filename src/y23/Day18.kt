@@ -1,3 +1,6 @@
+package y23
+
+import solve
 import kotlin.math.abs
 
 fun main() {
@@ -31,5 +34,5 @@ fun main() {
 
     fun part2(input: List<String>): Long = getArea(input, useHex = true)
 
-    solve(18, ::part1, ::part2, 62L, 952408144115L)
+    solve(23, 18, ::part1, ::part2, 62L, 952408144115L)
 }

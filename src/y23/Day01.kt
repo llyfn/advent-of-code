@@ -1,3 +1,7 @@
+package y23
+
+import solve
+
 fun main() {
     fun part1(input: List<String>): Int =
         input.sumOf { s -> "${s.first { it.isDigit() }}${s.last { it.isDigit() }}".toInt() }
@@ -13,5 +17,5 @@ fun main() {
         }
     }
 
-    solve(1, ::part1, ::part2, 142, 281)
+    solve(23, 1, ::part1, ::part2, 142, 281)
 }

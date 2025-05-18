@@ -1,3 +1,8 @@
+package y23
+
+import getInts
+import productOf
+import solve
 import kotlin.math.ceil
 import kotlin.math.floor
 import kotlin.math.pow
@@ -25,5 +30,5 @@ fun main() {
         return ceil(max - 1).toLong() - floor(min + 1).toLong() + 1
     }
 
-    solve(6, ::part1, ::part2, 288, 71503L)
+    solve(23, 6, ::part1, ::part2, 288, 71503L)
 }

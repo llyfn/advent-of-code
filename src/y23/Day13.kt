@@ -1,3 +1,7 @@
+package y23
+
+import solve
+
 fun main() {
     fun getValue(line: String) = line.fold(0) { acc, char -> acc shl 1 or (if (char == '#') 1 else 0) }
     fun parse(input: List<String>) = buildList {
@@ -27,5 +31,5 @@ fun main() {
         (rows.getLineOfReflection(true) * 100).takeIf { it > 0 } ?: cols.getLineOfReflection(true)
     }
 
-    solve(13, ::part1, ::part2, 405, 400)
+    solve(23, 13, ::part1, ::part2, 405, 400)
 }

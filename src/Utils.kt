@@ -1,12 +1,12 @@
 import java.math.BigInteger
 import java.security.MessageDigest
 import kotlin.io.path.Path
-import kotlin.io.path.readLines
+import kotlin.io.path.readText
 
 /**
  * Reads lines from the given input txt file.
  */
-fun readInput(name: String) = Path("src/$name.txt").readLines()
+fun readInput(name: String) = Path("src/$name.txt").readText().trim().lines()
 
 /**
  * Converts string to md5 hash.
@@ -53,13 +53,13 @@ inline fun <T> Iterable<T>.productOf(selector: (T) -> Int): Int = fold(1) { acc,
 /**
  * Runs solution on the input for the given day.
  */
-inline fun <T, S> solve(day: Int, pt1: (List<String>) -> T, pt2: (List<String>) -> S, t1Ans: T, t2Ans: S? = null) {
+inline fun <T, S> solve(year: Int, day: Int, pt1: (List<String>) -> T, pt2: (List<String>) -> S, t1Ans: T, t2Ans: S? = null) {
     val paddedDay = day.toString().padStart(2, '0')
-    val input = readInput("Day$paddedDay")
-    val testInput = runCatching { readInput("Day${paddedDay}_test") }.getOrNull()
+    val input = readInput("y$year/Day$paddedDay")
+    val testInput = runCatching { readInput("y$year/Day${paddedDay}_test") }.getOrNull()
 
-    check(pt1(testInput ?: readInput("Day${paddedDay}_1_test")) == t1Ans)
-    t2Ans?.let { check(pt2(testInput ?: readInput("Day${paddedDay}_2_test")) == it) }
+    check(pt1(testInput ?: readInput("y$year/Day${paddedDay}_1_test")) == t1Ans)
+    t2Ans?.let { check(pt2(testInput ?: readInput("y$year/Day${paddedDay}_2_test")) == it) }
 
     pt1(input).println()
     pt2(input).println()

@@ -1,3 +1,6 @@
+package y23
+
+import solve
 import kotlin.math.absoluteValue
 
 fun main() {
@@ -23,5 +26,5 @@ fun main() {
     fun part1(input: List<String>): Long = input.getSumOfPaths(2)
     fun part2(input: List<String>): Long = input.getSumOfPaths(1000000)
 
-    solve(11, ::part1, ::part2, 374L)
+    solve(23, 11, ::part1, ::part2, 374L)
 }

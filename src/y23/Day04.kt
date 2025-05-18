@@ -1,3 +1,6 @@
+package y23
+
+import solve
 import kotlin.math.pow
 
 fun main() {
@@ -25,5 +28,5 @@ fun main() {
         return copiesByCardId.sum()
     }
 
-    solve(4, ::part1, ::part2, 13, 30)
+    solve(23, 4, ::part1, ::part2, 13, 30)
 }

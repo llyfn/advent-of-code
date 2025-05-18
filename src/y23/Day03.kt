@@ -1,3 +1,9 @@
+package y23
+
+import findNumbers
+import getOrNull
+import solve
+
 fun main() {
     fun Char.isSymbol() = !isLetterOrDigit() && !equals('.')
 
@@ -32,5 +38,5 @@ fun main() {
         return adjNumsByGears.filterValues { it.size == 2 }.map { it.value[0] * it.value[1] }.sum()
     }
 
-    solve(3, ::part1, ::part2, 4361, 467835)
+    solve(23, 3, ::part1, ::part2, 4361, 467835)
 }

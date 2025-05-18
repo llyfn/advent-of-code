@@ -1,3 +1,7 @@
+package y23
+
+import solve
+
 fun main() {
     fun List<String>.getWinnings(withJoker: Boolean) =
         map { line -> line.split(" ").let { (cards, bid) -> Hand(cards, withJoker) to bid.toInt() } }
@@ -8,7 +12,7 @@ fun main() {
     fun part1(input: List<String>): Int = input.getWinnings(withJoker = false)
     fun part2(input: List<String>): Int = input.getWinnings(withJoker = true)
 
-    solve(7, ::part1, ::part2, 6440, 5905)
+    solve(23, 7, ::part1, ::part2, 6440, 5905)
 }
 
 data class Hand(val cards: String, val withJoker: Boolean) : Comparable<Hand> {

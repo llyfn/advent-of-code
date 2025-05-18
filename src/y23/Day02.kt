@@ -1,3 +1,7 @@
+package y23
+
+import solve
+
 fun main() {
     fun List<String>.findIntBefore(s: String) = find { it.endsWith(s) }?.substringBefore(s)?.toInt() ?: 0
 
@@ -15,5 +19,5 @@ fun main() {
     fun part2(input: List<String>): Int = input.map { it.parse() }
         .sumOf { (_, subsets) -> subsets.run { maxOf { it[0] } * maxOf { it[1] } * maxOf { it[2] } } }
 
-    solve(2, ::part1, ::part2, 8, 2286)
+    solve(23, 2, ::part1, ::part2, 8, 2286)
 }

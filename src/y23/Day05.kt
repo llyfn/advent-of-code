@@ -1,3 +1,8 @@
+package y23
+
+import getLongs
+import solve
+
 fun main() {
     fun parseMaps(input: List<String>) = buildList {
         var maps = input
@@ -44,6 +49,6 @@ fun main() {
         }.minOf { it.min() }
     }
 
-    solve(5, ::part1, ::part2, 35L, 46L)
+    solve(23, 5, ::part1, ::part2, 35L, 46L)
 }
 

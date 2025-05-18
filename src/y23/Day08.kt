@@ -1,3 +1,7 @@
+package y23
+
+import solve
+
 fun main() {
     fun List<String>.parseMaps() = associate { line ->
         Regex("[A-Z0-9]+").findAll(line).map { it.value }.toList().let { (src, l, r) -> src to (l to r) }
@@ -33,5 +37,5 @@ fun main() {
         }
     }
 
-    solve(8, ::part1, ::part2, 2, 6)
+    solve(23, 8, ::part1, ::part2, 2, 6)
 }

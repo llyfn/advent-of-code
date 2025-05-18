@@ -1,3 +1,8 @@
+package y23
+
+import getInts
+import solve
+
 fun main() {
     fun getArrangements(springs: String, groups: List<Int>): Long {
         val mem = mutableMapOf<Triple<Int, Int, Int>, Long>()
@@ -28,5 +33,5 @@ fun main() {
         getArrangements(List(5) { springs }.joinToString("?"), List(5) { groups.getInts() }.flatten())
     }
 
-    solve(12, ::part1, ::part2, 21L, 525152L)
+    solve(23, 12, ::part1, ::part2, 21L, 525152L)
 }

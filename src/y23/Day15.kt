@@ -1,3 +1,7 @@
+package y23
+
+import solve
+
 fun main() {
     fun hash(input: String): Int = input.fold(0) { acc, c -> (acc + c.code) * 17 and 255 }
 
@@ -25,5 +29,5 @@ fun main() {
         return slotsByHash.map { (b, v) -> v.mapIndexed { idx, (_, len) -> (b + 1) * (idx + 1) * len }.sum() }.sum()
     }
 
-    solve(15, ::part1, ::part2, 1320, 145)
+    solve(23, 15, ::part1, ::part2, 1320, 145)
 }
